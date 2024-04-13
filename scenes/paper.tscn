@@ -30,8 +30,9 @@ offset_bottom = 121.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_822ft")
-text = "A-OK Animal Shelter"
+text = "A-OK #1 Animal Shelter"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Message" type="Label" parent="."]
 offset_left = -100.0
