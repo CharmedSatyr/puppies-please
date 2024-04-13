@@ -11,6 +11,23 @@ var newPosition: Vector2 = Vector2()
 var mouse_in: bool = false
 var is_selected: bool = false
 
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var name_text = "Name: %s"
+	var color_text = "Color: %s"
+	var size_text = "Size: %s"
+	var energy_text = "Energy: %s"
+	var is_capitalist_text = "Is Capitalist: %s"
+	
+	# Determine Details text
+	var puppy_specs = Puppies.Database[randi() % Puppies.Database.size()]
+	$Message.text = "Puppy Available"
+	$Details/Name.text = name_text % puppy_specs["name"]
+	$Details/Color.text = color_text % puppy_specs["color"]
+	$Details/Size.text = size_text % puppy_specs["size"]
+	$Details/Energy.text = energy_text % puppy_specs["energy"]
+	$Details/IsCapitalist.text = is_capitalist_text % puppy_specs["is_capitalist"]
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if is_selected and event.is_pressed() && mouse_in:
