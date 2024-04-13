@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cifvdjsaryrk"]
+[gd_scene load_steps=12 format=3 uid="uid://cifvdjsaryrk"]
 
 [ext_resource type="Script" path="res://scripts/puppy.gd" id="1_7k4rn"]
 [ext_resource type="Texture2D" uid="uid://c2pac5tcfgpbv" path="res://art/enemyFlyingAlt_1.png" id="1_nyn5l"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c6wbnuwolh5lh" path="res://art/playerGrey_up1.png" id="4_0v3pr"]
 [ext_resource type="Texture2D" uid="uid://bfnmlkro87mkf" path="res://art/enemySwimming_2.png" id="4_eingb"]
 [ext_resource type="Texture2D" uid="uid://bj6jigd67my07" path="res://art/enemyWalking_1.png" id="5_pxmy8"]
+[ext_resource type="Texture2D" uid="uid://df2ja1nosf8ou" path="res://art/playerGrey_walk2.png" id="5_utcpm"]
 [ext_resource type="Texture2D" uid="uid://d0b56r6gfoo8x" path="res://art/enemyWalking_2.png" id="6_w3v3b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p7t8k"]
@@ -25,6 +26,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_0v3pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_utcpm")
 }],
 "loop": true,
 "name": &"player",

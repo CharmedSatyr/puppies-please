@@ -31,9 +31,9 @@ var is_capitalist_text: String = "Is Capitalist: %s"
 var index: int;
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	# Determine Details text
-	var puppy_specs = Puppies.Database[index]
+	var puppy_specs: Dictionary = Puppies.Database[index]
 	message.text = "Puppy Available"
 	puppy_name.text = name_text % puppy_specs["name"]
 	puppy_color.text = color_text % puppy_specs["color"]
@@ -63,7 +63,7 @@ func _physics_process(_delta: float) -> void:
 
 func select() -> void:
 	is_selected = true
-	
+
 func _on_mouse_entered() -> void:
 	mouse_in = true
 

@@ -30,14 +30,16 @@ script = ExtResource("1_i0ujb")
 shape = SubResource("CircleShape2D_flrd4")
 
 [node name="PuppyPath" type="Path2D" parent="."]
+position = Vector2(227.183, 0)
+scale = Vector2(0.937956, 1)
 curve = SubResource("Curve2D_6mukv")
 
 [node name="PuppySpawnLocation" type="PathFollow2D" parent="PuppyPath"]
 position = Vector2(149, 48)
 
 [node name="PaperPath" type="Path2D" parent="."]
-position = Vector2(48.9932, 202.222)
-scale = Vector2(0.671186, 0.705645)
+position = Vector2(498.895, 647.742)
+scale = Vector2(0.40339, 0.451612)
 curve = SubResource("Curve2D_rxvsg")
 
 [node name="PaperSpawnLocation" type="PathFollow2D" parent="PaperPath"]

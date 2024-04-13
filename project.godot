@@ -26,8 +26,8 @@ gdscript/warnings/unsafe_call_argument=1
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=720
+window/size/viewport_width=768
+window/size/viewport_height=1024
 window/stretch/mode="canvas_items"
 
 [filesystem]
