@@ -1,3 +1,4 @@
+# This is a piece of paper with details matching a db entry/puppy sprite
 class_name Paper
 extends CharacterBody2D
 

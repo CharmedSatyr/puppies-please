@@ -1,4 +1,5 @@
-class_name Workspace
+# This class helps you sort papers
+class_name Desk
 extends Area2D
 
 func _process(_delta: float) -> void:

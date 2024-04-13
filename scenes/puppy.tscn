@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cifvdjsaryrk"]
+
+[ext_resource type="Script" path="res://scripts/puppy.gd" id="1_7k4rn"]
+[ext_resource type="Texture2D" uid="uid://c2pac5tcfgpbv" path="res://art/enemyFlyingAlt_1.png" id="1_nyn5l"]
+[ext_resource type="Texture2D" uid="uid://cnd1c0xwrfbf7" path="res://art/enemyFlyingAlt_2.png" id="2_jgi2j"]
+[ext_resource type="Texture2D" uid="uid://jps2c75y7y8i" path="res://art/enemySwimming_1.png" id="3_43l6q"]
+[ext_resource type="Texture2D" uid="uid://c6wbnuwolh5lh" path="res://art/playerGrey_up1.png" id="4_0v3pr"]
+[ext_resource type="Texture2D" uid="uid://bfnmlkro87mkf" path="res://art/enemySwimming_2.png" id="4_eingb"]
+[ext_resource type="Texture2D" uid="uid://bj6jigd67my07" path="res://art/enemyWalking_1.png" id="5_pxmy8"]
+[ext_resource type="Texture2D" uid="uid://d0b56r6gfoo8x" path="res://art/enemyWalking_2.png" id="6_w3v3b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7t8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nyn5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jgi2j")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0v3pr")
+}],
+"loop": true,
+"name": &"player",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_43l6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eingb")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pxmy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w3v3b")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53nxp"]
+radius = 45.0
+height = 98.0
+
+[node name="Puppy" type="RigidBody2D"]
+scale = Vector2(1e-05, 1e-05)
+collision_layer = 4
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_7k4rn")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_p7t8k")
+animation = &"player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_53nxp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

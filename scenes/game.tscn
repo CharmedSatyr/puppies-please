@@ -1,16 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=7 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
-[ext_resource type="Script" path="res://scripts/workspace.gd" id="1_i0ujb"]
+[ext_resource type="Script" path="res://scripts/desk.gd" id="1_i0ujb"]
+[ext_resource type="PackedScene" uid="uid://cifvdjsaryrk" path="res://scenes/puppy.tscn" id="2_fqpjr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
 
-[node name="Desk" type="Node2D"]
-script = ExtResource("1_4ayt2")
+[sub_resource type="Curve2D" id="Curve2D_6mukv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 149, 48, 0, 0, 0, 0, 407, 48, 0, 0, 0, 0, 422, 283, 0, 0, 0, 0, 148, 276, 0, 0, 0, 0, 149, 48, 0, 0, 0, 0, 405, 48)
+}
+point_count = 6
 
-[node name="Workspace" type="Area2D" parent="."]
+[sub_resource type="Curve2D" id="Curve2D_rxvsg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 151, 439, 0, 0, 0, 0, 436, 440, 0, 0, 0, 0, 444, 687, 0, 0, 0, 0, 149, 678, 0, 0, 0, 0, 151, 439)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_4ayt2")
+puppy_scene = ExtResource("2_fqpjr")
+
+[node name="Desk" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("1_i0ujb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Workspace"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
 shape = SubResource("CircleShape2D_flrd4")
+
+[node name="PuppyPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6mukv")
+
+[node name="PuppySpawnLocation" type="PathFollow2D" parent="PuppyPath"]
+position = Vector2(149, 48)
+
+[node name="PaperPath" type="Path2D" parent="."]
+position = Vector2(48.9932, 202.222)
+scale = Vector2(0.671186, 0.705645)
+curve = SubResource("Curve2D_rxvsg")
+
+[node name="PaperSpawnLocation" type="PathFollow2D" parent="PaperPath"]
+position = Vector2(151, 439)
+rotation = 0.00350876
