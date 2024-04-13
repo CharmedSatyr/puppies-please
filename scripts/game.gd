@@ -1,4 +1,4 @@
-class_name Desk
+class_name Game
 extends Node2D
 
 var paper_scene: PackedScene = preload("res://Scenes/paper.tscn")
