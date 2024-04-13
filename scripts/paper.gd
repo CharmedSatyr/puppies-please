@@ -1,3 +1,4 @@
+class_name Paper
 extends CharacterBody2D
 
 var draggingDistance: float
@@ -18,13 +19,14 @@ func _input(event: InputEvent) -> void:
 		else:
 			dragging = false
 			is_selected = false
-			
+
 	elif event is InputEventMouseMotion:
 		if dragging:
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
 
 func _physics_process(_delta: float) -> void:
 	if dragging:
+		# TODO: what are these numbers 30, 30?
 		set_velocity((newPosition - position) * Vector2(30, 30))
 		move_and_slide()
 
