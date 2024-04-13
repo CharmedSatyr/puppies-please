@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf5rkgctq6mnx"]
+
+[ext_resource type="PackedScene" uid="uid://bkjjxjyijqeai" path="res://scenes/paper.tscn" id="1_2h3rk"]
+[ext_resource type="Script" path="res://scripts/desk.gd" id="1_4ayt2"]
+[ext_resource type="Script" path="res://scripts/workspace.gd" id="1_i0ujb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
+
+[node name="Desk" type="Node2D"]
+script = ExtResource("1_4ayt2")
+
+[node name="Workspace" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("1_i0ujb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Workspace"]
+shape = SubResource("CircleShape2D_flrd4")
+
+[node name="Paper" parent="." instance=ExtResource("1_2h3rk")]
+position = Vector2(153, 362)
+
+[node name="Paper2" parent="." instance=ExtResource("1_2h3rk")]
+position = Vector2(245, 353)
+
+[node name="Paper3" parent="." instance=ExtResource("1_2h3rk")]
+position = Vector2(309, 478)
