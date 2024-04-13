@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 				top_paper = paper
 
 			if paper != top_paper:
-				paper.is_selected = false		
+				paper.is_selected = false
 
 		top_paper.select()
 
