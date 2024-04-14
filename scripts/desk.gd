@@ -6,7 +6,7 @@ func _process(_delta: float) -> void:
 	position = get_global_mouse_position()
 
 	var stack: Array[Node2D] = get_overlapping_bodies()
-
+		
 	var count: int = len(stack)
 
 	if (count == 0):
@@ -16,7 +16,6 @@ func _process(_delta: float) -> void:
 		paper.select()
 		if (Input.is_action_just_pressed("mouse_click")):
 			get_parent().push_paper_to_top(paper)
-
 	else:
 		var max_index: int = -1
 		var top_paper: Node2D = null
@@ -29,7 +28,6 @@ func _process(_delta: float) -> void:
 				paper.is_selected = false
 
 		top_paper.select()
-
 
 		if (Input.is_action_just_pressed("mouse_click")):
 			get_parent().push_paper_to_top(top_paper)

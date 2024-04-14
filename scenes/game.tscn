@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=8 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
 [ext_resource type="Script" path="res://scripts/desk.gd" id="1_i0ujb"]
 [ext_resource type="PackedScene" uid="uid://cifvdjsaryrk" path="res://scenes/puppy.tscn" id="2_fqpjr"]
 [ext_resource type="PackedScene" uid="uid://b08y3ulyxbiir" path="res://scenes/human.tscn" id="4_t7xvb"]
 [ext_resource type="PackedScene" uid="uid://b5qy3es8nuopf" path="res://scenes/dialogue.tscn" id="5_s2q8n"]
+[ext_resource type="PackedScene" uid="uid://bwmosmm4qxvsx" path="res://scenes/stamp.tscn" id="6_vrmvy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
 
@@ -33,6 +34,11 @@ autostart = true
 [node name="DialogueTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Stamp" parent="." instance=ExtResource("6_vrmvy")]
+z_index = 4096
+z_as_relative = false
+position = Vector2(550, 810)
 
 [connection signal="give_application" from="Human" to="." method="_on_human_give_application"]
 [connection signal="next_message" from="Dialogue" to="." method="continue_dialogue"]

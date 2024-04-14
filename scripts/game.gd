@@ -11,7 +11,7 @@ var paper_stack: Array[Node2D] = []
 # Dictionary indices of puppies whose Papers/sprites are instantiated
 var puppies_in_use: Array[int] = []
 
-# Number of additional papers to dynamically spawn
+# Number of puppy dossiers to dynamically spawn
 var spawn_count: int = 3
 
 # Called when the node enters the scene tree for the first time.
@@ -81,7 +81,7 @@ func continue_dialogue() -> void:
 
 func _on_human_give_application():
 	var application: Application = application_scene.instantiate()
-	application.position = Vector2(384, 306)
+	application.position = Vector2(384, 206)
 
 	add_child(application)
 

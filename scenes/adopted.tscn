@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqfn7fs1hec8w"]
+
+[ext_resource type="Texture2D" uid="uid://cw25mxeflqnxi" path="res://art/adopted.bmp" id="1_w6d1h"]
+
+[node name="Adopted" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_w6d1h")
