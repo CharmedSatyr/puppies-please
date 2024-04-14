@@ -17,8 +17,22 @@ position = Vector2(3.33333, 3.33333)
 texture = ExtResource("1_hqdi3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(17.9167, 26.6667)
+position = Vector2(16.6667, 28.3333)
 shape = SubResource("RectangleShape2D_ea2oe")
+
+[node name="PuppyButton" type="Button" parent="."]
+offset_left = -10.0
+offset_top = -120.0
+offset_right = 220.0
+offset_bottom = 80.0
+
+[node name="NoPuppyButton" type="Button" parent="."]
+offset_left = -275.0
+offset_top = -120.0
+offset_right = -45.0
+offset_bottom = 80.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="PuppyButton" to="." method="_on_puppy_button_pressed"]
+[connection signal="pressed" from="NoPuppyButton" to="." method="_on_no_puppy_button_pressed"]

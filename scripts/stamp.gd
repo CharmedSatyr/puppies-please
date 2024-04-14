@@ -13,6 +13,9 @@ var is_selected: bool = false
 
 var is_open: bool = false
 
+signal puppy_stamp
+signal no_puppy_stamp
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if is_selected && event.is_pressed() && mouse_in:
@@ -31,6 +34,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if dragging:
+		pass
 		set_velocity((newPosition - position) * DRAG_SPEED)
 		move_and_slide()
 
@@ -42,3 +46,9 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouse_in = false
+
+func _on_puppy_button_pressed():
+	puppy_stamp.emit()
+
+func _on_no_puppy_button_pressed():
+	no_puppy_stamp.emit()
