@@ -92,3 +92,9 @@ func _on_setup_timer_timeout():
 func _on_dialogue_timer_timeout():
 	$Human.speed = 0
 	continue_dialogue()
+
+func _on_stamp_no_puppy_stamp():
+	print("NOOO PUPPIESSSSS")
+
+func _on_stamp_puppy_stamp():
+	print("puppy")
