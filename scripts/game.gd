@@ -4,6 +4,7 @@ extends Node2D
 
 var paper_scene: PackedScene = preload("res://Scenes/paper.tscn")
 var application_scene: PackedScene = preload("res://scenes/application.tscn")
+
 @export var puppy_scene: PackedScene # Serializing field for puppers
 
 var paper_stack: Array[Node2D] = []
@@ -92,9 +93,3 @@ func _on_setup_timer_timeout():
 func _on_dialogue_timer_timeout():
 	$Human.speed = 0
 	continue_dialogue()
-
-func _on_stamp_no_puppy_stamp():
-	print("NOOO PUPPIESSSSS")
-
-func _on_stamp_puppy_stamp():
-	print("puppy")

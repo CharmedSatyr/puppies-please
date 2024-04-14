@@ -12,16 +12,21 @@ var mouse_in: bool = false
 var is_selected: bool = false
 
 var is_open: bool = false
+var left_bound: int = 550
+var right_bound: int = 950
 
 signal puppy_stamp
 signal no_puppy_stamp
+
+func _ready() -> void:
+	# A hack to close the drawer on start
+	dragging = true
+	newPosition.x = right_bound
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if is_selected && event.is_pressed() && mouse_in:
 			dragging = true
-			var left_bound: int = 550
-			var right_bound: int = 950
 
 			if is_open:
 				newPosition.x = right_bound
@@ -34,7 +39,6 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if dragging:
-		pass
 		set_velocity((newPosition - position) * DRAG_SPEED)
 		move_and_slide()
 
