@@ -13,10 +13,8 @@ var dialogue_option = 0;
 const dialogue = [
 	"Howdy ho!",
 	"Puppies, please! I summon puppies now.",
-	"Here is application for puppy.",
-	"Rustle your papers and find me match.",
-	"Please give me papers of my new puppy."
-	#"Glory to A-OK #1 Animal Shelter."
+	"Here is application.",
+	"Papers, please of glorious whelp."
 ]
 
 func get_dialogue_text() -> String:

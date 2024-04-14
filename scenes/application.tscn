@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdrhu2w801vvb"]
+
+[ext_resource type="Script" path="res://scripts/application.gd" id="1_3aw8j"]
+[ext_resource type="Texture2D" uid="uid://dmwvcl3w5ydh2" path="res://art/large-paper.png" id="1_ibjpe"]
+[ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_18rdo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efk2q"]
+size = Vector2(224, 324)
+
+[node name="Application" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_3aw8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ibjpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_efk2q")
+
+[node name="Header" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -118.0
+offset_right = 102.0
+offset_bottom = 121.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_18rdo")
+text = "A-OK #1 Animal Shelter
+Adoption Application"
+horizontal_alignment = 1
+
+[node name="Personal" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = -60.0
+offset_right = 90.0
+offset_bottom = -10.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_18rdo")
+text = "Name: Borslow Versa
+Pet experience: Yes"
+autowrap_mode = 2
+
+[node name="Request" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_right = 90.0
+offset_bottom = 112.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_18rdo")
+text = "Request:
+- Dog
+- Brown
+- Sympethetic"
+autowrap_mode = 2
