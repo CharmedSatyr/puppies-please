@@ -66,3 +66,4 @@ autostart = true
 
 [connection signal="timeout" from="HumanTimer" to="." method="_on_human_timer_timeout"]
 [connection signal="timeout" from="DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
+[connection signal="next_message" from="Dialogue" to="." method="continue_dialogue"]

@@ -69,5 +69,12 @@ func _on_human_timer_timeout():
 	$Human.speed = 0
 
 func _on_dialogue_timer_timeout():
+	continue_dialogue()
+
+func continue_dialogue() -> void:
 	$Dialogue.show()
-	$Dialogue.show_message("Howdy ho!")
+	var message: String = $Human.get_dialogue_text()
+	if message.length() > 0:
+		$Dialogue.show_message(message)
+	else:
+		$Dialogue.hide()
