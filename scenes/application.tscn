@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdrhu2w801vvb"]
 
 [ext_resource type="Script" path="res://scripts/application.gd" id="1_3aw8j"]
-[ext_resource type="Texture2D" uid="uid://dmwvcl3w5ydh2" path="res://art/large-paper.png" id="1_ibjpe"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_18rdo"]
+[ext_resource type="Texture2D" uid="uid://bu1ssnl2xh2cq" path="res://art/Paper.png" id="2_h5kf6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efk2q"]
 size = Vector2(224, 324)
@@ -13,7 +13,7 @@ input_pickable = true
 script = ExtResource("1_3aw8j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ibjpe")
+texture = ExtResource("2_h5kf6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_efk2q")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkjjxjyijqeai"]
 
-[ext_resource type="Texture2D" uid="uid://dmwvcl3w5ydh2" path="res://art/large-paper.png" id="1_02rtq"]
 [ext_resource type="Script" path="res://scripts/paper.gd" id="1_4njl0"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_822ft"]
+[ext_resource type="Texture2D" uid="uid://bu1ssnl2xh2cq" path="res://art/Paper.png" id="2_u3o1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bval5"]
 size = Vector2(222, 327)
@@ -15,7 +15,7 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1, 1.016)
-texture = ExtResource("1_02rtq")
+texture = ExtResource("2_u3o1x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bval5")
