@@ -71,6 +71,8 @@ func stack_paper(paper: Node2D) -> void:
 func push_paper_to_top(paper: Node2D) -> void:
 	paper_stack.erase(paper)
 	stack_paper(paper)
+	# Keep stamp on top
+	stack_paper($Stamp)
 
 func continue_dialogue() -> void:
 	$Dialogue.show()
@@ -78,7 +80,7 @@ func continue_dialogue() -> void:
 	if message.length() > 0:
 		$Dialogue.show_message(message)
 	else:
-		$Stamp.locked = false
+		$Stamp.enabled = true
 		$Dialogue.hide()
 
 func _on_human_give_application():

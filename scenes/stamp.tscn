@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwmosmm4qxvsx"]
+[gd_scene load_steps=5 format=3 uid="uid://bwmosmm4qxvsx"]
 
 [ext_resource type="Texture2D" uid="uid://bp4yewa5lugwp" path="res://art/Stamp.png" id="1_hqdi3"]
 [ext_resource type="Script" path="res://scripts/stamp.gd" id="2_fiixd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea2oe"]
-size = Vector2(689.167, 321.667)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg264"]
+size = Vector2(40, 321.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kp87"]
+size = Vector2(141.667, 320)
 
 [node name="Stamps" type="CharacterBody2D"]
 scale = Vector2(0.6, 0.6)
@@ -16,9 +19,13 @@ script = ExtResource("2_fiixd")
 position = Vector2(3.33333, 3.33333)
 texture = ExtResource("1_hqdi3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16.6667, 28.3333)
-shape = SubResource("RectangleShape2D_ea2oe")
+[node name="ArrowCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-305, 32.5)
+shape = SubResource("RectangleShape2D_sg264")
+
+[node name="BaseCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(292.5, 31.6667)
+shape = SubResource("RectangleShape2D_1kp87")
 
 [node name="PuppyButton" type="Button" parent="."]
 offset_left = -10.0
