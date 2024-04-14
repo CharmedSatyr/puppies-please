@@ -3,6 +3,7 @@ class_name Desk
 extends Area2D
 
 var adopted_stamp: PackedScene = preload("res://scenes/adopted.tscn")
+var no_puppy_stamp: PackedScene = preload("res://scenes/no_puppy.tscn")
 
 func _process(_delta: float) -> void:
 	position = get_global_mouse_position()
@@ -47,4 +48,13 @@ func _on_stamp_puppy_stamp():
 		stack[0].add_child(stamp)
 
 func _on_stamp_no_puppy_stamp():
-	print("No puppies")
+	var stack: Array[Node2D] = []
+	# The stamp gets included in overlapping bodies
+	# Exclude it
+	for object in get_overlapping_bodies():
+		if object is Application:
+			stack.append(object)
+
+	if stack.size() == 1:
+		var stamp = no_puppy_stamp.instantiate();
+		stack[0].add_child(stamp)
