@@ -11,7 +11,6 @@ func _physics_process(delta):
 		move_and_slide()
 
 func _on_dialogue_timer_timeout():
-	print("Human: Ready to chat!")
 	$AnimatedSprite2D.play()
 
 var dialogue_option = 0;
@@ -20,7 +19,9 @@ const dialogue = [
 	"Howdy ho!",
 	"Puppies, please! I summon puppies now.",
 	"Here is application for puppy.",
-	"Glory to A-OK #1 Animal Shelter."
+	"Rustle your papers and find me match.",
+	"Please give me papers of my new puppy."
+	#"Glory to A-OK #1 Animal Shelter."
 ]
 
 func get_dialogue_text() -> String:
