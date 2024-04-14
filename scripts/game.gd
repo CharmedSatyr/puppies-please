@@ -94,3 +94,8 @@ func _on_setup_timer_timeout():
 func _on_dialogue_timer_timeout():
 	$Human.speed = 0
 	continue_dialogue()
+
+
+func _on_title_screen_start_game():
+	$TitleScreen.hide()
+	$SetupTimer.start()

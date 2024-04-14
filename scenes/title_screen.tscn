@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfuhjmgl44bbu"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_0gh3o"]
+[ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="1_50qla"]
+
+[node name="TitleScreen" type="CanvasLayer"]
+script = ExtResource("1_0gh3o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -242.0
+offset_right = 384.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_50qla")
+theme_override_font_sizes/font_size = 72
+text = "Puppies, Please"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -324.0
+offset_right = 150.0
+offset_bottom = -198.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_50qla")
+theme_override_font_sizes/font_size = 72
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

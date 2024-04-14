@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-color = Color(0, 0, 0, 1)
+color = Color(0.721569, 0.721569, 0.721569, 1)
 
 [node name="InnerTextBox" type="ColorRect" parent="TextBox"]
 layout_mode = 1
@@ -35,6 +35,7 @@ offset_right = 178.0
 offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 1)
 
 [node name="Message" type="Label" parent="TextBox"]
 layout_mode = 1
@@ -49,7 +50,7 @@ offset_right = 130.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_aqi1s")
 theme_override_font_sizes/font_size = 24
 text = "Puppies, please!"
@@ -72,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_aqi1s")
 theme_override_font_sizes/font_size = 24
 text = "Next"

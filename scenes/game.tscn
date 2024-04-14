@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=10 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
 [ext_resource type="Script" path="res://scripts/sorter.gd" id="1_i0ujb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b08y3ulyxbiir" path="res://scenes/human.tscn" id="4_t7xvb"]
 [ext_resource type="PackedScene" uid="uid://b5qy3es8nuopf" path="res://scenes/dialogue.tscn" id="5_s2q8n"]
 [ext_resource type="PackedScene" uid="uid://bwmosmm4qxvsx" path="res://scenes/stamp.tscn" id="6_vrmvy"]
+[ext_resource type="PackedScene" uid="uid://dfuhjmgl44bbu" path="res://scenes/title_screen.tscn" id="8_tfafu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
 
@@ -35,7 +36,6 @@ scale = Vector2(5, 5)
 [node name="SetupTimer" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
-autostart = true
 
 [node name="DialogueTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -46,6 +46,8 @@ z_index = 4096
 z_as_relative = false
 position = Vector2(550, 810)
 
+[node name="TitleScreen" parent="." instance=ExtResource("8_tfafu")]
+
 [connection signal="give_application" from="Human" to="." method="_on_human_give_application"]
 [connection signal="next_message" from="Dialogue" to="." method="continue_dialogue"]
 [connection signal="timeout" from="SetupTimer" to="." method="_on_setup_timer_timeout"]
@@ -53,3 +55,4 @@ position = Vector2(550, 810)
 [connection signal="timeout" from="DialogueTimer" to="Human" method="_on_dialogue_timer_timeout"]
 [connection signal="no_puppy_stamp" from="Stamp" to="Sorter" method="_on_stamp_no_puppy_stamp"]
 [connection signal="puppy_stamp" from="Stamp" to="Sorter" method="_on_stamp_puppy_stamp"]
+[connection signal="start_game" from="TitleScreen" to="." method="_on_title_screen_start_game"]
