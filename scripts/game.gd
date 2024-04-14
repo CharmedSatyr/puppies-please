@@ -5,7 +5,7 @@ extends Node2D
 var paper_scene: PackedScene = preload("res://Scenes/paper.tscn")
 @export var puppy_scene: PackedScene # Serializing field for puppers
 
-var paper_stack: Array[Paper] = []
+var paper_stack: Array[Node2D] = []
 
 var puppies_in_use: Array[int] = []
 
@@ -30,7 +30,7 @@ func create_puppy(index: int) -> void:
 	add_child(puppy)
 
 func create_paper(index: int) -> void:
-	var paper: Paper = paper_scene.instantiate()
+	var paper: Node2D = paper_scene.instantiate()
 	paper.index = index
 
 	# Set paper position
@@ -54,14 +54,14 @@ func get_unique_puppy() -> int:
 	puppies_in_use.append(index)
 	return index
 
-func stack_paper(paper: Paper) -> void:
+func stack_paper(paper: Node2D) -> void:
 	paper_stack.append(paper)
 	var count: int = 0
-	for p: Paper in paper_stack:
+	for p: Node2D in paper_stack:
 		p.z_index = count
 		count += 1
 
-func push_paper_to_top(paper: Paper) -> void:
+func push_paper_to_top(paper: Node2D) -> void:
 	paper_stack.erase(paper)
 	stack_paper(paper)
 
