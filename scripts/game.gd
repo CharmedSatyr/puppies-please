@@ -65,11 +65,9 @@ func push_paper_to_top(paper: Paper) -> void:
 	paper_stack.erase(paper)
 	stack_paper(paper)
 
-func _on_human_timer_timeout():
-	$Human.speed = 0
-
 func _on_dialogue_timer_timeout():
 	continue_dialogue()
+	$Human.speed = 0
 
 func continue_dialogue() -> void:
 	$Dialogue.show()
