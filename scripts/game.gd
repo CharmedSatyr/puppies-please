@@ -78,6 +78,7 @@ func continue_dialogue() -> void:
 	if message.length() > 0:
 		$Dialogue.show_message(message)
 	else:
+		$Stamp.locked = false
 		$Dialogue.hide()
 
 func _on_human_give_application():

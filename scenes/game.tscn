@@ -15,7 +15,8 @@ script = ExtResource("1_4ayt2")
 puppy_scene = ExtResource("2_fqpjr")
 
 [node name="Desk" type="Sprite2D" parent="."]
-position = Vector2(824, 1123)
+position = Vector2(386, 831)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_2tkbc")
 
 [node name="Sorter" type="Area2D" parent="."]

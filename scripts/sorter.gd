@@ -34,7 +34,6 @@ func _process(_delta: float) -> void:
 		if (Input.is_action_just_pressed("mouse_click")):
 			get_parent().push_paper_to_top(top_paper)
 
-
 func _on_stamp_puppy_stamp():
 	var stack: Array[Node2D] = []
 	# The stamp gets included in overlapping bodies
