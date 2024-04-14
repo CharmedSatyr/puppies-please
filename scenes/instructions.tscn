@@ -1,8 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnjmxtgaybb4a"]
+[gd_scene load_steps=5 format=3 uid="uid://cnjmxtgaybb4a"]
+
+[ext_resource type="Texture2D" uid="uid://dmwvcl3w5ydh2" path="res://art/large-paper.png" id="1_qqvrm"]
+[ext_resource type="Script" path="res://scripts/draggable_paper.gd" id="1_yku0d"]
+[ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_saoa8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3m2d"]
+size = Vector2(240, 326)
 
 [node name="Instructions" type="CharacterBody2D"]
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_yku0d")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.088, 1)
+texture = ExtResource("1_qqvrm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_v3m2d")
+
+[node name="Header" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_top = -120.0
+offset_right = 105.0
+offset_bottom = -70.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saoa8")
+text = "A-OK #1 Animal Shelter"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -80.0
+offset_right = 50.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saoa8")
+text = "Instructions"
+
+[node name="Details" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -50.0
+offset_right = 125.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saoa8")
+theme_override_font_sizes/font_size = 15
+text = "- Press button for client.
+- Client submits application.
+- Only clients with pet experience get a puppy.
+- Green stamp puppy paper if there is a good match.
+- Red stamp client application if there is not a good match."
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
