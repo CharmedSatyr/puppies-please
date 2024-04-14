@@ -14,7 +14,6 @@ var is_selected: bool = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		print(is_selected, event.is_pressed(), mouse_in)
 
 		if is_selected && event.is_pressed() && mouse_in:
 			draggingDistance = position.distance_to(get_viewport().get_mouse_position())

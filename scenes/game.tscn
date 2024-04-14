@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=8 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
 [ext_resource type="Script" path="res://scripts/desk.gd" id="1_i0ujb"]
 [ext_resource type="PackedScene" uid="uid://cifvdjsaryrk" path="res://scenes/puppy.tscn" id="2_fqpjr"]
 [ext_resource type="PackedScene" uid="uid://b08y3ulyxbiir" path="res://scenes/human.tscn" id="4_t7xvb"]
 [ext_resource type="PackedScene" uid="uid://b5qy3es8nuopf" path="res://scenes/dialogue.tscn" id="5_s2q8n"]
-[ext_resource type="PackedScene" uid="uid://bdrhu2w801vvb" path="res://scenes/application.tscn" id="6_5i3xr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
 
@@ -14,12 +13,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 149, 48, 0, 0, 0, 0, 407, 48, 0, 0, 0, 0, 422, 283, 0, 0, 0, 0, 148, 276, 0, 0, 0, 0, 149, 48, 0, 0, 0, 0, 405, 48)
 }
 point_count = 6
-
-[sub_resource type="Curve2D" id="Curve2D_rxvsg"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 151, 439, 0, 0, 0, 0, 436, 440, 0, 0, 0, 0, 444, 687, 0, 0, 0, 0, 149, 678, 0, 0, 0, 0, 151, 439)
-}
-point_count = 5
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4ayt2")
@@ -40,15 +33,6 @@ curve = SubResource("Curve2D_6mukv")
 [node name="PuppySpawnLocation" type="PathFollow2D" parent="PuppyPath"]
 position = Vector2(149, 48)
 
-[node name="PaperPath" type="Path2D" parent="."]
-position = Vector2(498.895, 647.742)
-scale = Vector2(0.40339, 0.451612)
-curve = SubResource("Curve2D_rxvsg")
-
-[node name="PaperSpawnLocation" type="PathFollow2D" parent="PaperPath"]
-position = Vector2(151, 439)
-rotation = 0.00350876
-
 [node name="Human" parent="." instance=ExtResource("4_t7xvb")]
 position = Vector2(-248, 434)
 scale = Vector2(5, 5)
@@ -56,13 +40,16 @@ scale = Vector2(5, 5)
 [node name="Dialogue" parent="." instance=ExtResource("5_s2q8n")]
 
 [node name="SetupTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 autostart = true
 
-[node name="Application" parent="." instance=ExtResource("6_5i3xr")]
-position = Vector2(174, 576)
+[node name="DialogueTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
+[connection signal="give_application" from="Human" to="." method="_on_human_give_application"]
 [connection signal="next_message" from="Dialogue" to="." method="continue_dialogue"]
 [connection signal="timeout" from="SetupTimer" to="." method="_on_setup_timer_timeout"]
-[connection signal="timeout" from="SetupTimer" to="Human" method="_on_setup_timer_timeout"]
+[connection signal="timeout" from="DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
+[connection signal="timeout" from="DialogueTimer" to="Human" method="_on_dialogue_timer_timeout"]

@@ -3,6 +3,7 @@ class_name Game
 extends Node2D
 
 var paper_scene: PackedScene = preload("res://Scenes/paper.tscn")
+var application_scene: PackedScene = preload("res://scenes/application.tscn")
 @export var puppy_scene: PackedScene # Serializing field for puppers
 
 var paper_stack: Array[Node2D] = []
@@ -33,11 +34,10 @@ func create_paper(index: int) -> void:
 	var paper: Node2D = paper_scene.instantiate()
 	paper.index = index
 
-	# Set paper position
-	var paper_spawn_location = $PaperPath/PaperSpawnLocation
-	paper_spawn_location.progress_ratio = randf()
+	var x = randi() % 200 + 400
+	var y = randi() % 200 + 650
 
-	paper.position = paper_spawn_location.position
+	paper.position = Vector2(x, y)
 
 	add_child(paper)
 	stack_paper(paper)
@@ -65,10 +65,6 @@ func push_paper_to_top(paper: Node2D) -> void:
 	paper_stack.erase(paper)
 	stack_paper(paper)
 
-func _on_setup_timer_timeout():
-	continue_dialogue()
-	$Human.speed = 0
-
 func continue_dialogue() -> void:
 	$Dialogue.show()
 	var message: String = $Human.get_dialogue_text()
@@ -76,3 +72,17 @@ func continue_dialogue() -> void:
 		$Dialogue.show_message(message)
 	else:
 		$Dialogue.hide()
+
+func _on_human_give_application():
+	var application: Application = application_scene.instantiate()
+	application.position = Vector2(384, 306)
+
+	add_child(application)
+
+func _on_setup_timer_timeout():
+	$Human.speed = 200
+	$DialogueTimer.start()
+
+func _on_dialogue_timer_timeout():
+	$Human.speed = 0
+	continue_dialogue()

@@ -1,7 +1,9 @@
 class_name Human
 extends CharacterBody2D
 
-var speed: float = 200
+var speed: float = 0
+
+signal give_application
 
 func _physics_process(delta):
 	velocity.x = speed
@@ -21,10 +23,14 @@ func get_dialogue_text() -> String:
 	var text: String = ""
 	if (dialogue_option < dialogue.size()):
 		text = dialogue[dialogue_option]
+
+		if text == "Here is application.":
+			give_application.emit()	
+
 		dialogue_option += 1
 	else:
 		text = ""
 	return text
 
-func _on_setup_timer_timeout():
+func _on_dialogue_timer_timeout():
 	$AnimatedSprite2D.play()
