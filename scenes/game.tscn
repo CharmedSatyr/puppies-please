@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=9 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
-[ext_resource type="Script" path="res://scripts/desk.gd" id="1_i0ujb"]
+[ext_resource type="Script" path="res://scripts/sorter.gd" id="1_i0ujb"]
 [ext_resource type="PackedScene" uid="uid://cifvdjsaryrk" path="res://scenes/puppy.tscn" id="2_fqpjr"]
+[ext_resource type="Texture2D" uid="uid://2aeftsxjcmi" path="res://art/Desk.png" id="3_2tkbc"]
 [ext_resource type="PackedScene" uid="uid://b08y3ulyxbiir" path="res://scenes/human.tscn" id="4_t7xvb"]
 [ext_resource type="PackedScene" uid="uid://b5qy3es8nuopf" path="res://scenes/dialogue.tscn" id="5_s2q8n"]
 [ext_resource type="PackedScene" uid="uid://bwmosmm4qxvsx" path="res://scenes/stamp.tscn" id="6_vrmvy"]
@@ -13,11 +14,15 @@
 script = ExtResource("1_4ayt2")
 puppy_scene = ExtResource("2_fqpjr")
 
-[node name="Desk" type="Area2D" parent="."]
+[node name="Desk" type="Sprite2D" parent="."]
+position = Vector2(824, 1123)
+texture = ExtResource("3_2tkbc")
+
+[node name="Sorter" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("1_i0ujb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sorter"]
 shape = SubResource("CircleShape2D_flrd4")
 
 [node name="Human" parent="." instance=ExtResource("4_t7xvb")]
@@ -45,3 +50,5 @@ position = Vector2(550, 810)
 [connection signal="timeout" from="SetupTimer" to="." method="_on_setup_timer_timeout"]
 [connection signal="timeout" from="DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
 [connection signal="timeout" from="DialogueTimer" to="Human" method="_on_dialogue_timer_timeout"]
+[connection signal="no_puppy_stamp" from="Stamp" to="." method="_on_stamp_no_puppy_stamp"]
+[connection signal="puppy_stamp" from="Stamp" to="." method="_on_stamp_puppy_stamp"]

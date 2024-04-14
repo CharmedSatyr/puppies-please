@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl74ykfbvaqt2"]
+
+[ext_resource type="Texture2D" uid="uid://2aeftsxjcmi" path="res://art/Desk.png" id="2_jv11q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugxwi"]
+size = Vector2(767, 436)
+
+[node name="Desk" type="Area2D"]
+collision_layer = 32
+input_pickable = false
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_jv11q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -2)
+shape = SubResource("RectangleShape2D_ugxwi")
