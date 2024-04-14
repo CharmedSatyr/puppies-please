@@ -8,6 +8,7 @@ var application_scene: PackedScene = preload("res://scenes/application.tscn")
 
 var paper_stack: Array[Node2D] = []
 
+# Dictionary indices of puppies whose Papers/sprites are instantiated
 var puppies_in_use: Array[int] = []
 
 # Number of additional papers to dynamically spawn
@@ -27,6 +28,11 @@ func _ready() -> void:
 func create_puppy(index: int) -> void:
 	var puppy: Puppy = puppy_scene.instantiate()
 	puppy.index = index
+	
+	var x = randi() % 200 + 400
+	var y = randi() % 200 + 100
+
+	puppy.position = Vector2(x, y)
 
 	add_child(puppy)
 

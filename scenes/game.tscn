@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=7 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
 [ext_resource type="Script" path="res://scripts/desk.gd" id="1_i0ujb"]
@@ -7,12 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b5qy3es8nuopf" path="res://scenes/dialogue.tscn" id="5_s2q8n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
-
-[sub_resource type="Curve2D" id="Curve2D_6mukv"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 149, 48, 0, 0, 0, 0, 407, 48, 0, 0, 0, 0, 422, 283, 0, 0, 0, 0, 148, 276, 0, 0, 0, 0, 149, 48, 0, 0, 0, 0, 405, 48)
-}
-point_count = 6
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4ayt2")
@@ -24,14 +18,6 @@ script = ExtResource("1_i0ujb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
 shape = SubResource("CircleShape2D_flrd4")
-
-[node name="PuppyPath" type="Path2D" parent="."]
-position = Vector2(227.183, 0)
-scale = Vector2(0.937956, 1)
-curve = SubResource("Curve2D_6mukv")
-
-[node name="PuppySpawnLocation" type="PathFollow2D" parent="PuppyPath"]
-position = Vector2(149, 48)
 
 [node name="Human" parent="." instance=ExtResource("4_t7xvb")]
 position = Vector2(-248, 434)
