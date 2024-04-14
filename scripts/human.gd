@@ -3,15 +3,10 @@ extends CharacterBody2D
 
 var speed: float = 200
 
-@onready var dialogue_timer: Timer = $DialogueTimer
-
 func _physics_process(delta):
 	velocity.x = speed
 	if velocity.x > 0:
 		move_and_slide()
-
-func _on_dialogue_timer_timeout():
-	$AnimatedSprite2D.play()
 
 var dialogue_option = 0;
 
@@ -26,11 +21,12 @@ const dialogue = [
 
 func get_dialogue_text() -> String:
 	var text: String = ""
-
 	if (dialogue_option < dialogue.size()):
 		text = dialogue[dialogue_option]
 		dialogue_option += 1
 	else:
 		text = ""
-
 	return text
+
+func _on_setup_timer_timeout():
+	$AnimatedSprite2D.play()

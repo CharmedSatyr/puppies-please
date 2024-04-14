@@ -52,13 +52,13 @@ rotation = 0.00350876
 position = Vector2(-248, 434)
 scale = Vector2(5, 5)
 
-[node name="DialogueTimer" type="Timer" parent="."]
+[node name="Dialogue" parent="." instance=ExtResource("5_s2q8n")]
+
+[node name="SetupTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 autostart = true
 
-[node name="Dialogue" parent="." instance=ExtResource("5_s2q8n")]
-
-[connection signal="timeout" from="DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
-[connection signal="timeout" from="DialogueTimer" to="Human" method="_on_dialogue_timer_timeout"]
 [connection signal="next_message" from="Dialogue" to="." method="continue_dialogue"]
+[connection signal="timeout" from="SetupTimer" to="." method="_on_setup_timer_timeout"]
+[connection signal="timeout" from="SetupTimer" to="Human" method="_on_setup_timer_timeout"]
