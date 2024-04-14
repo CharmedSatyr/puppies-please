@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=12 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
 [ext_resource type="Script" path="res://scripts/sorter.gd" id="1_i0ujb"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5qy3es8nuopf" path="res://scenes/dialogue.tscn" id="5_s2q8n"]
 [ext_resource type="PackedScene" uid="uid://bwmosmm4qxvsx" path="res://scenes/stamp.tscn" id="6_vrmvy"]
 [ext_resource type="PackedScene" uid="uid://dfuhjmgl44bbu" path="res://scenes/title_screen.tscn" id="8_tfafu"]
+[ext_resource type="PackedScene" uid="uid://4a2rum12t2vr" path="res://scenes/introduction.tscn" id="9_gpshc"]
 [ext_resource type="PackedScene" uid="uid://cnjmxtgaybb4a" path="res://scenes/instructions.tscn" id="9_wgay0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
@@ -53,6 +54,8 @@ position = Vector2(179, 817)
 [node name="TitleScreen" parent="." instance=ExtResource("8_tfafu")]
 visible = false
 
+[node name="Introduction" parent="." instance=ExtResource("9_gpshc")]
+
 [connection signal="give_application" from="Human" to="." method="_on_human_give_application"]
 [connection signal="next_message" from="Dialogue" to="." method="continue_dialogue"]
 [connection signal="timeout" from="SetupTimer" to="." method="_on_setup_timer_timeout"]
@@ -61,3 +64,4 @@ visible = false
 [connection signal="no_puppy_stamp" from="Stamp" to="Sorter" method="_on_stamp_no_puppy_stamp"]
 [connection signal="puppy_stamp" from="Stamp" to="Sorter" method="_on_stamp_puppy_stamp"]
 [connection signal="start_game" from="TitleScreen" to="." method="_on_title_screen_start_game"]
+[connection signal="close_introduction" from="Introduction" to="." method="_on_introduction_close_introduction"]

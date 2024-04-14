@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://4a2rum12t2vr"]
+
+[ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="1_481qc"]
+[ext_resource type="Script" path="res://scripts/introduction.gd" id="1_dcu2c"]
+
+[node name="Introduction" type="CanvasLayer"]
+script = ExtResource("1_dcu2c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -299.0
+offset_top = 120.0
+offset_right = 301.0
+offset_bottom = 703.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_481qc")
+theme_override_font_sizes/font_size = 26
+text = "Economic conditions have led to more animals being put into shelters.
+
+Shelter budgets are increasingly tight.
+
+There is a shortage of interested parties who can successfully adopt a pet.
+
+If animals are not properly housed, they may find their way back to the shelter.
+
+As a shelter worker, your job is to match animals with owners who will give them a caring, long-term home.
+
+
+Glory to A-OK #1 Animal Shelter"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -224.0
+offset_right = 94.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_481qc")
+theme_override_font_sizes/font_size = 26
+text = "Walk to work"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

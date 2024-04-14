@@ -18,6 +18,8 @@ var spawn_count: int = 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Dialogue.hide()
+	$Introduction.hide()
+	$TitleScreen.show()
 	
 	for i: int in range(0, spawn_count):
 		var index: int = get_unique_puppy()
@@ -97,7 +99,10 @@ func _on_dialogue_timer_timeout():
 	$Human.speed = 0
 	continue_dialogue()
 
-
 func _on_title_screen_start_game():
 	$TitleScreen.hide()
+	$Introduction.show()
+
+func _on_introduction_close_introduction():
+	$Introduction.hide()
 	$SetupTimer.start()
