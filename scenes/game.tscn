@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=9 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
 [ext_resource type="Script" path="res://scripts/desk.gd" id="1_i0ujb"]
 [ext_resource type="PackedScene" uid="uid://cifvdjsaryrk" path="res://scenes/puppy.tscn" id="2_fqpjr"]
+[ext_resource type="PackedScene" uid="uid://b08y3ulyxbiir" path="res://scenes/human.tscn" id="4_t7xvb"]
+[ext_resource type="PackedScene" uid="uid://b5qy3es8nuopf" path="res://scenes/dialogue.tscn" id="5_s2q8n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
 
@@ -45,3 +47,22 @@ curve = SubResource("Curve2D_rxvsg")
 [node name="PaperSpawnLocation" type="PathFollow2D" parent="PaperPath"]
 position = Vector2(151, 439)
 rotation = 0.00350876
+
+[node name="Human" parent="." instance=ExtResource("4_t7xvb")]
+position = Vector2(-248, 434)
+scale = Vector2(5, 5)
+
+[node name="HumanTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="DialogueTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Dialogue" parent="." instance=ExtResource("5_s2q8n")]
+
+[connection signal="timeout" from="HumanTimer" to="." method="_on_human_timer_timeout"]
+[connection signal="timeout" from="DialogueTimer" to="." method="_on_dialogue_timer_timeout"]

@@ -11,6 +11,7 @@ size = Vector2(222, 327)
 collision_layer = 2
 input_pickable = true
 script = ExtResource("1_4njl0")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1, 1.016)
