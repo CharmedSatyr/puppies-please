@@ -1,16 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnjmxtgaybb4a"]
 
-[ext_resource type="Script" path="res://scripts/draggable_paper.gd" id="1_yku0d"]
+[ext_resource type="Script" path="res://scenes/instructions.gd" id="1_nyhfl"]
 [ext_resource type="Texture2D" uid="uid://dxoc5hrssrfmf" path="res://art/PaperWithTriangle.png" id="2_8o4jn"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_saoa8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3m2d"]
-size = Vector2(240, 326)
+size = Vector2(245, 326)
 
 [node name="Instructions" type="CharacterBody2D"]
+position = Vector2(8, 7)
 collision_layer = 2
 input_pickable = true
-script = ExtResource("1_yku0d")
+script = ExtResource("1_nyhfl")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,7 +19,7 @@ scale = Vector2(1.088, 1)
 texture = ExtResource("2_8o4jn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
+position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_v3m2d")
 
 [node name="Header" type="Label" parent="."]
@@ -74,5 +75,30 @@ text = "- Press button for client.
 - Red stamp client application if there is not a good match."
 autowrap_mode = 2
 
+[node name="PageCorner" type="Button" parent="."]
+offset_left = 86.0
+offset_top = 128.0
+offset_right = 123.0
+offset_bottom = 163.0
+
+[node name="PageNumber" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = 136.0
+offset_right = 41.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_saoa8")
+text = "Page 1"
+horizontal_alignment = 1
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="PageCorner" to="." method="_on_page_corner_pressed"]
