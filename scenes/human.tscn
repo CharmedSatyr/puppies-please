@@ -21,8 +21,9 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28w0d"]
 height = 64.0
 
-[node name="Human" type="CharacterBody2D"]
-collision_layer = 8
+[node name="Human" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ou02t")
 metadata/_edit_group_ = true
 
@@ -36,3 +37,5 @@ animation = &"dialogue_1"
 position = Vector2(0, -7.215)
 scale = Vector2(0.885, 0.885)
 shape = SubResource("CapsuleShape2D_28w0d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

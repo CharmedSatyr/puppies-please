@@ -62,6 +62,8 @@ visible = false
 [connection signal="timeout" from="DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
 [connection signal="timeout" from="DialogueTimer" to="Human" method="_on_dialogue_timer_timeout"]
 [connection signal="no_puppy_stamp" from="Stamp" to="Sorter" method="_on_stamp_no_puppy_stamp"]
+[connection signal="no_puppy_stamp" from="Stamp" to="Human" method="_on_stamp_no_puppy_stamp"]
 [connection signal="puppy_stamp" from="Stamp" to="Sorter" method="_on_stamp_puppy_stamp"]
+[connection signal="puppy_stamp" from="Stamp" to="Human" method="_on_stamp_puppy_stamp"]
 [connection signal="start_game" from="TitleScreen" to="." method="_on_title_screen_start_game"]
 [connection signal="close_introduction" from="Introduction" to="." method="_on_introduction_close_introduction"]

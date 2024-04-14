@@ -67,8 +67,9 @@ func stack_paper(paper: Node2D) -> void:
 	paper_stack.append(paper)
 	var count: int = 0
 	for p: Node2D in paper_stack:
-		p.z_index = count
-		count += 1
+		if p != null:
+			p.z_index = count
+			count += 1
 
 func push_paper_to_top(paper: Node2D) -> void:
 	paper_stack.erase(paper)
