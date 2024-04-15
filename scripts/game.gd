@@ -15,6 +15,9 @@ var puppies_in_use: Array[int] = []
 var puppies: Dictionary = {}
 # Index of the puppy that has been adopted. Available after approving adoption
 var adopted: int
+# Currently, you're mishousing the dog if it's not Theo because Theo is brown
+# and that's what the human wants
+var mishoused_dog: bool
 
 # Number of puppy dossiers to dynamically spawn
 var spawn_count: int = 3
@@ -129,6 +132,12 @@ func cleanup_human() -> void:
 	if adopted >= 0:
 		# The puppy will walk out with him
 		var pup = puppies[adopted]
+		# Index 0 is Theodore. The only properly adoptable dog right now.
+		if pup.index != 0:
+			print("Not Theo!")
+			mishoused_dog = true
+		else:
+			mishoused_dog = false
 		pup.set_axis_velocity(Vector2(-100, 100))
 		await get_tree().create_timer(1.0).timeout
 		pup.set_axis_velocity(Vector2(-300, 0))
@@ -140,4 +149,5 @@ func cleanup_human() -> void:
 	end_game()
 
 func end_game() -> void:
+	$DayOver.update()
 	$DayOver.show()

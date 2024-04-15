@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cieev0f87k6pe"]
+[gd_scene load_steps=3 format=3 uid="uid://cieev0f87k6pe"]
 
+[ext_resource type="Script" path="res://scripts/day_over.gd" id="1_2aqgk"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="1_wd1xf"]
 
 [node name="DayOver" type="CanvasLayer"]
+script = ExtResource("1_2aqgk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -58,7 +60,7 @@ Adoption Fees: 80"
 horizontal_alignment = 2
 autowrap_mode = 2
 
-[node name="Expenditures" type="Label" parent="."]
+[node name="Expenses" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -72,10 +74,9 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_wd1xf")
 theme_override_font_sizes/font_size = 26
-text = "Food (Dogs): 20
+text = "Food (Dogs): 30
 Medicine (Dogs): 10
-Utilities: 20
-Facility maintenance: 10"
+Facility maintenance: 20"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -83,8 +84,8 @@ autowrap_mode = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -173.0
-offset_top = 568.0
+offset_left = -321.0
+offset_top = 562.0
 offset_right = 183.0
 offset_bottom = 627.0
 grow_horizontal = 2
@@ -110,7 +111,9 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_wd1xf")
 theme_override_font_sizes/font_size = 26
-text = "Thank you for playing! Leave a comment if you like puppies!
+text = "...
+
+Thank you for playing! You got 1 of 3 possible endings. Leave a comment if you like puppies!
 
 By CharmedSatyr for Ludum Dare 55"
 horizontal_alignment = 1
