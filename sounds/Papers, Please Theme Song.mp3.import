@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://davm1mwhq5ctr"
+path="res://.godot/imported/Papers, Please Theme Song.mp3-7b060aae828e5c542a1a00da0c022e0f.mp3str"
+
+[deps]
+
+source_file="res://sounds/Papers, Please Theme Song.mp3"
+dest_files=["res://.godot/imported/Papers, Please Theme Song.mp3-7b060aae828e5c542a1a00da0c022e0f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
