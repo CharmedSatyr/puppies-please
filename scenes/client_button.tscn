@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5kg7ojqsxjaf"]
 
-[ext_resource type="Texture2D" uid="uid://cmwogdwjd7ulj" path="res://art/ClientButton.png" id="1_gh83j"]
+[ext_resource type="Texture2D" uid="uid://cmwogdwjd7ulj" path="res://sprites/ClientButton.png" id="1_gh83j"]
 [ext_resource type="Script" path="res://scripts/client_button.gd" id="2_1ct5u"]
 [ext_resource type="AudioStream" uid="uid://cn04xsnakrw7w" path="res://sounds/buzzer-5-183896.mp3" id="3_d8nxh"]
 

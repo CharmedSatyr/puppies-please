@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b08y3ulyxbiir"]
 
 [ext_resource type="Script" path="res://scripts/human.gd" id="1_ou02t"]
-[ext_resource type="Texture2D" uid="uid://c6e4hvaffo0kw" path="res://art/humanBlue_1.png" id="2_emajw"]
-[ext_resource type="Texture2D" uid="uid://dasjoooy3r7um" path="res://art/humanBlue_2.png" id="3_o3jwq"]
+[ext_resource type="Texture2D" uid="uid://c6e4hvaffo0kw" path="res://sprites/humanBlue_1.png" id="2_emajw"]
+[ext_resource type="Texture2D" uid="uid://dasjoooy3r7um" path="res://sprites/humanBlue_2.png" id="3_o3jwq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_at07m"]
 animations = [{

@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://cifvdjsaryrk"]
 
 [ext_resource type="Script" path="res://scripts/puppy.gd" id="1_7k4rn"]
-[ext_resource type="Texture2D" uid="uid://c2pac5tcfgpbv" path="res://art/enemyFlyingAlt_1.png" id="1_nyn5l"]
-[ext_resource type="Texture2D" uid="uid://cnd1c0xwrfbf7" path="res://art/enemyFlyingAlt_2.png" id="2_jgi2j"]
-[ext_resource type="Texture2D" uid="uid://jps2c75y7y8i" path="res://art/enemySwimming_1.png" id="3_43l6q"]
-[ext_resource type="Texture2D" uid="uid://c6wbnuwolh5lh" path="res://art/playerGrey_up1.png" id="4_0v3pr"]
-[ext_resource type="Texture2D" uid="uid://bfnmlkro87mkf" path="res://art/enemySwimming_2.png" id="4_eingb"]
-[ext_resource type="Texture2D" uid="uid://bj6jigd67my07" path="res://art/enemyWalking_1.png" id="5_pxmy8"]
-[ext_resource type="Texture2D" uid="uid://df2ja1nosf8ou" path="res://art/playerGrey_walk2.png" id="5_utcpm"]
-[ext_resource type="Texture2D" uid="uid://d0b56r6gfoo8x" path="res://art/enemyWalking_2.png" id="6_w3v3b"]
+[ext_resource type="Texture2D" uid="uid://c2pac5tcfgpbv" path="res://sprites/enemyFlyingAlt_1.png" id="1_nyn5l"]
+[ext_resource type="Texture2D" uid="uid://cnd1c0xwrfbf7" path="res://sprites/enemyFlyingAlt_2.png" id="2_jgi2j"]
+[ext_resource type="Texture2D" uid="uid://jps2c75y7y8i" path="res://sprites/enemySwimming_1.png" id="3_43l6q"]
+[ext_resource type="Texture2D" uid="uid://c6wbnuwolh5lh" path="res://sprites/playerGrey_up1.png" id="4_0v3pr"]
+[ext_resource type="Texture2D" uid="uid://bfnmlkro87mkf" path="res://sprites/enemySwimming_2.png" id="4_eingb"]
+[ext_resource type="Texture2D" uid="uid://bj6jigd67my07" path="res://sprites/enemyWalking_1.png" id="5_pxmy8"]
+[ext_resource type="Texture2D" uid="uid://df2ja1nosf8ou" path="res://sprites/playerGrey_walk2.png" id="5_utcpm"]
+[ext_resource type="Texture2D" uid="uid://d0b56r6gfoo8x" path="res://sprites/enemyWalking_2.png" id="6_w3v3b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p7t8k"]
 animations = [{

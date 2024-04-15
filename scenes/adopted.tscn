@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqfn7fs1hec8w"]
 
-[ext_resource type="Texture2D" uid="uid://bakqr4t6vy7pd" path="res://art/Adopted.png" id="1_oddjd"]
+[ext_resource type="Texture2D" uid="uid://bakqr4t6vy7pd" path="res://sprites/Adopted.png" id="1_oddjd"]
 
 [node name="Adopted" type="Sprite2D"]
 rotation = -0.366519

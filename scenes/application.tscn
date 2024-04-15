@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/application.gd" id="1_3aw8j"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_18rdo"]
-[ext_resource type="Texture2D" uid="uid://bu1ssnl2xh2cq" path="res://art/Paper.png" id="2_h5kf6"]
+[ext_resource type="Texture2D" uid="uid://bu1ssnl2xh2cq" path="res://sprites/Paper.png" id="2_h5kf6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efk2q"]
 size = Vector2(224, 324)

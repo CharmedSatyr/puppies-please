@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwmosmm4qxvsx"]
 
-[ext_resource type="Texture2D" uid="uid://bp4yewa5lugwp" path="res://art/Stamp.png" id="1_hqdi3"]
+[ext_resource type="Texture2D" uid="uid://bp4yewa5lugwp" path="res://sprites/Stamp.png" id="1_hqdi3"]
 [ext_resource type="Script" path="res://scripts/stamp.gd" id="2_fiixd"]
 [ext_resource type="AudioStream" uid="uid://cym28rvhmwckt" path="res://sounds/stamp-81635.mp3" id="3_if3f6"]
 

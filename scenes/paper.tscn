@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/paper.gd" id="1_4njl0"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_822ft"]
-[ext_resource type="Texture2D" uid="uid://dxoc5hrssrfmf" path="res://art/PaperWithTriangle.png" id="2_t25c2"]
-[ext_resource type="Texture2D" uid="uid://do1iru6h4i2x2" path="res://art/pexels-igor-justo-10391531.jpg" id="4_jfrwl"]
+[ext_resource type="Texture2D" uid="uid://dxoc5hrssrfmf" path="res://sprites/PaperWithTriangle.png" id="2_t25c2"]
+[ext_resource type="Texture2D" uid="uid://c1xrtht4awvk8" path="res://photos/theodore.png" id="4_onfhg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bval5"]
 size = Vector2(222, 327)
@@ -140,7 +140,7 @@ text = "Official Dossier"
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
 scale = Vector2(0.095, 0.095)
-texture = ExtResource("4_jfrwl")
+texture = ExtResource("4_onfhg")
 
 [node name="PageCorner" type="Button" parent="."]
 offset_left = 78.0
