@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfuhjmgl44bbu"]
+[gd_scene load_steps=7 format=3 uid="uid://dfuhjmgl44bbu"]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_0gh3o"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="1_50qla"]
+[ext_resource type="Texture2D" uid="uid://bsear65gvugk0" path="res://sprites/ace-head.png" id="3_a6wsf"]
+[ext_resource type="Texture2D" uid="uid://dym21kvocbdpu" path="res://sprites/milo-head.png" id="4_cdxwr"]
+[ext_resource type="Texture2D" uid="uid://cune3jpj0qdgs" path="res://sprites/mr-squiggles-head.png" id="5_d8hi5"]
+[ext_resource type="Texture2D" uid="uid://cxvj2bw70ccyg" path="res://sprites/theo-head.png" id="6_r8d2g"]
 
 [node name="TitleScreen" type="CanvasLayer"]
 script = ExtResource("1_0gh3o")
@@ -47,5 +51,29 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_50qla")
 theme_override_font_sizes/font_size = 72
 text = "Start"
+
+[node name="Ace-head" type="Sprite2D" parent="."]
+position = Vector2(371, 608)
+rotation = -0.335103
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_a6wsf")
+
+[node name="Milo-head" type="Sprite2D" parent="."]
+position = Vector2(543, 629)
+rotation = 0.15708
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_cdxwr")
+
+[node name="Mr-squiggles-head" type="Sprite2D" parent="."]
+position = Vector2(736, 1019)
+rotation = 0.279253
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_d8hi5")
+
+[node name="Theo-head" type="Sprite2D" parent="."]
+position = Vector2(721, 676)
+rotation = 0.185005
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("6_r8d2g")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
