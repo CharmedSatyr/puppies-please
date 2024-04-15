@@ -28,6 +28,7 @@ func _ready() -> void:
 	$Introduction.hide()
 	$DayOver.hide()
 	$TitleScreen.show()
+	$Music.play()
 	
 	for i: int in range(0, spawn_count):
 		var index: int = get_unique_puppy()
@@ -108,10 +109,12 @@ func _on_human_give_application() -> void:
 
 func _on_setup_timer_timeout() -> void:
 	$Human.speed = 200
+	$FootstepsSound.play()
 	$DialogueTimer.start()
 
 func _on_dialogue_timer_timeout() -> void:
 	$Human.speed = 0
+	$FootstepsSound.stop()
 	continue_dialogue()
 
 func _on_title_screen_start_game() -> void:
@@ -137,13 +140,16 @@ func cleanup_human() -> void:
 			mishoused_dog = true
 		else:
 			mishoused_dog = false
+		$BarkingSound.play()
 		pup.set_axis_velocity(Vector2(-100, 100))
 		await get_tree().create_timer(1.0).timeout
 		pup.set_axis_velocity(Vector2(-300, 0))
 
 	$Human.speed = -200
+	$FootstepsSound.play()
 	$Human/AnimatedSprite2D.stop()
 	await get_tree().create_timer(2.0).timeout
+	$FootstepsSound.stop()
 	$Human.queue_free()
 	end_game()
 

@@ -58,12 +58,14 @@ func _on_mouse_exited() -> void:
 
 func _on_puppy_button_pressed():
 	if enabled:
+		$StampSound.play()
 		puppy_stamp.emit()
 		enabled = false
 		close()
 
 func _on_no_puppy_button_pressed():
 	if enabled:
+		$StampSound.play()
 		no_puppy_stamp.emit()
 		enabled = false
 		close()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwmosmm4qxvsx"]
+[gd_scene load_steps=6 format=3 uid="uid://bwmosmm4qxvsx"]
 
 [ext_resource type="Texture2D" uid="uid://bp4yewa5lugwp" path="res://art/Stamp.png" id="1_hqdi3"]
 [ext_resource type="Script" path="res://scripts/stamp.gd" id="2_fiixd"]
+[ext_resource type="AudioStream" uid="uid://cym28rvhmwckt" path="res://sounds/stamp-81635.mp3" id="3_if3f6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sg264"]
 size = Vector2(40, 321.667)
@@ -38,6 +39,9 @@ offset_left = -275.0
 offset_top = -120.0
 offset_right = -45.0
 offset_bottom = 80.0
+
+[node name="StampSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_if3f6")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

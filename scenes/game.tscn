@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=17 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
 [ext_resource type="Script" path="res://scripts/sorter.gd" id="1_i0ujb"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://4a2rum12t2vr" path="res://scenes/introduction.tscn" id="9_gpshc"]
 [ext_resource type="PackedScene" uid="uid://cieev0f87k6pe" path="res://scenes/day_over.tscn" id="9_mdxlf"]
 [ext_resource type="PackedScene" uid="uid://cnjmxtgaybb4a" path="res://scenes/instructions.tscn" id="9_wgay0"]
+[ext_resource type="AudioStream" uid="uid://davm1mwhq5ctr" path="res://sounds/Papers, Please Theme Song.mp3" id="13_h04af"]
+[ext_resource type="AudioStream" uid="uid://1iem7ybaoqqg" path="res://sounds/dog_barking-6296.mp3" id="14_t8v7j"]
+[ext_resource type="AudioStream" uid="uid://dmei3hnv84ipm" path="res://sounds/indoor-footsteps-6385.mp3" id="16_yio3k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
 
@@ -65,6 +68,18 @@ visible = false
 visible = false
 
 [node name="DayOver" parent="." instance=ExtResource("9_mdxlf")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_h04af")
+volume_db = -5.0
+autoplay = true
+
+[node name="BarkingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_t8v7j")
+
+[node name="FootstepsSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_yio3k")
+volume_db = 24.0
 
 [connection signal="next_client" from="Desk/ClientButton" to="." method="_on_client_button_next_client"]
 [connection signal="give_application" from="Human" to="." method="_on_human_give_application"]
