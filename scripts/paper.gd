@@ -2,6 +2,8 @@
 class_name Paper
 extends DraggablePaper
 
+var photo_page: bool = true
+
 # Labels
 @onready var message: Label = $Message
 @onready var puppy_name: Label = $Details/Name
@@ -30,3 +32,13 @@ func _ready() -> void:
 	puppy_size.text = size_text % puppy_specs["size"]
 	puppy_energy.text = energy_text % puppy_specs["energy"]
 	puppy_is_capitalist.text = is_capitalist_text % puppy_specs["is_capitalist"]
+
+
+func _on_page_corner_pressed():
+	photo_page = !photo_page
+	if photo_page:
+		$ImageHeader.show()
+		$Image.show()
+	else:
+		$ImageHeader.hide()
+		$Image.hide()

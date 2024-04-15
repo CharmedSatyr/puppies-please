@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkjjxjyijqeai"]
+[gd_scene load_steps=6 format=3 uid="uid://bkjjxjyijqeai"]
 
 [ext_resource type="Script" path="res://scripts/paper.gd" id="1_4njl0"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_822ft"]
-[ext_resource type="Texture2D" uid="uid://bu1ssnl2xh2cq" path="res://art/Paper.png" id="2_u3o1x"]
+[ext_resource type="Texture2D" uid="uid://dxoc5hrssrfmf" path="res://art/PaperWithTriangle.png" id="2_t25c2"]
+[ext_resource type="Texture2D" uid="uid://do1iru6h4i2x2" path="res://art/pexels-igor-justo-10391531.jpg" id="4_jfrwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bval5"]
 size = Vector2(222, 327)
@@ -15,7 +16,7 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1, 1.016)
-texture = ExtResource("2_u3o1x")
+texture = ExtResource("2_t25c2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bval5")
@@ -122,5 +123,31 @@ text = "Is Capitalist"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="ImageHeader" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = -158.0
+offset_right = 64.0
+offset_bottom = -135.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_822ft")
+text = "Official Dossier"
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("4_jfrwl")
+
+[node name="PageCorner" type="Button" parent="."]
+offset_left = 78.0
+offset_top = 129.032
+offset_right = 109.0
+offset_bottom = 162.032
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="PageCorner" to="." method="_on_page_corner_pressed"]
