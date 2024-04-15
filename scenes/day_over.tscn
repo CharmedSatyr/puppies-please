@@ -64,9 +64,9 @@ autowrap_mode = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -299.0
+offset_left = -296.0
 offset_top = 374.0
-offset_right = 181.0
+offset_right = 184.0
 offset_bottom = 529.0
 grow_horizontal = 2
 size_flags_horizontal = 4
@@ -74,9 +74,9 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_wd1xf")
 theme_override_font_sizes/font_size = 26
-text = "Food (Dogs): 30
-Medicine (Dogs): 10
-Facility maintenance: 20"
+text = "Food (Dogs): -30
+Medicine (Dogs): -10
+Facility maintenance: -20"
 horizontal_alignment = 2
 autowrap_mode = 2
 

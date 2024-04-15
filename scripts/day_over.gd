@@ -7,17 +7,18 @@ func update() -> void:
 	$Income.text = """Savings: 70
 Adoption Fees: %s""" % adoption_fees
 
-	var penalty = "Dog was found unsuitable. Rehome fee: 90" if get_parent().mishoused_dog else ""
+	var penalty = "Dog was found unsuitable. Rehome fee: -90" if get_parent().mishoused_dog else ""
 
-	$Expenses.text = """Food (Dogs): 30
-Medicine (Dogs): 10
-Facility Maintenance: 20
+	$Expenses.text = """Food (Dogs): -30
+Medicine (Dogs): -10
+Facility Maintenance: -20
 %s
 """ % penalty
 
 	var income = 70 + adoption_fees
 	var expenses = 60 + (90 if get_parent().mishoused_dog else 0)
-	$Total.text = "Total: %s" % (income - expenses)
+	$Total.text = """-------------------------------
+Total: %s""" % (income - expenses)
 
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()

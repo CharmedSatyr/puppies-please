@@ -61,13 +61,11 @@ position = Vector2(550, 810)
 [node name="Instructions" parent="." instance=ExtResource("9_wgay0")]
 position = Vector2(156, 841)
 
-[node name="TitleScreen" parent="." instance=ExtResource("8_tfafu")]
-visible = false
+[node name="DayOver" parent="." instance=ExtResource("9_mdxlf")]
 
 [node name="Introduction" parent="." instance=ExtResource("9_gpshc")]
-visible = false
 
-[node name="DayOver" parent="." instance=ExtResource("9_mdxlf")]
+[node name="TitleScreen" parent="." instance=ExtResource("8_tfafu")]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_h04af")
@@ -92,5 +90,5 @@ volume_db = 24.0
 [connection signal="no_puppy_stamp" from="Stamp" to="Human" method="_on_stamp_no_puppy_stamp"]
 [connection signal="puppy_stamp" from="Stamp" to="Sorter" method="_on_stamp_puppy_stamp"]
 [connection signal="puppy_stamp" from="Stamp" to="Human" method="_on_stamp_puppy_stamp"]
-[connection signal="start_game" from="TitleScreen" to="." method="_on_title_screen_start_game"]
 [connection signal="close_introduction" from="Introduction" to="." method="_on_introduction_close_introduction"]
+[connection signal="start_game" from="TitleScreen" to="." method="_on_title_screen_start_game"]

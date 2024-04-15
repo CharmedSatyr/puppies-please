@@ -2,7 +2,7 @@
 class_name Game
 extends Node2D
 
-var paper_scene: PackedScene = preload("res://Scenes/paper.tscn")
+var paper_scene: PackedScene = preload("res://scenes/paper.tscn")
 var application_scene: PackedScene = preload("res://scenes/application.tscn")
 
 @export var puppy_scene: PackedScene # Serializing field for puppers
@@ -148,6 +148,7 @@ func cleanup_human() -> void:
 	$Human.speed = -200
 	$FootstepsSound.play()
 	$Human/AnimatedSprite2D.stop()
+	$Human/AnimatedSprite2D.flip_h = true
 	await get_tree().create_timer(2.0).timeout
 	$FootstepsSound.stop()
 	$Human.queue_free()
