@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnjmxtgaybb4a"]
 
-[ext_resource type="Script" path="res://scenes/instructions.gd" id="1_nyhfl"]
+[ext_resource type="Script" path="res://scripts/instructions.gd" id="1_nyhfl"]
 [ext_resource type="Texture2D" uid="uid://dxoc5hrssrfmf" path="res://art/PaperWithTriangle.png" id="2_8o4jn"]
 [ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="2_saoa8"]
 

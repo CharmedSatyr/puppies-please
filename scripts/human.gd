@@ -42,8 +42,6 @@ func _on_body_entered(body):
 	if !is_approved and !is_refused:
 		return
 
-	if body is Application:
-		body.queue_free()
 	if is_approved and body is Paper:
 		body.queue_free()
 	if is_refused and body is Application:
