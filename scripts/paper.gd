@@ -5,6 +5,7 @@ extends DraggablePaper
 var photo_page: bool = true
 
 # Labels
+@onready var image: Sprite2D = $Image
 @onready var message: Label = $Message
 @onready var puppy_name: Label = $Details/Name
 @onready var puppy_color: Label = $Details/Color
@@ -26,13 +27,18 @@ var index: int;
 func _ready() -> void:
 	# Determine Details text
 	var puppy_specs: Dictionary = Puppies.Database[index]
+	
+	var texture_path: String = "res://photos/%s" % puppy_specs["image"]
+	var texture: CompressedTexture2D = load(texture_path)
+
+	$Image.texture = texture
+
 	message.text = "Puppy Available"
 	puppy_name.text = name_text % puppy_specs["name"]
 	puppy_color.text = color_text % puppy_specs["color"]
 	puppy_size.text = size_text % puppy_specs["size"]
 	puppy_energy.text = energy_text % puppy_specs["energy"]
 	puppy_is_capitalist.text = is_capitalist_text % puppy_specs["is_capitalist"]
-
 
 func _on_page_corner_pressed():
 	photo_page = !photo_page
