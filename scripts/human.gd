@@ -50,16 +50,19 @@ func _on_dialogue_timer_timeout():
 func _on_body_entered(body):
 	if !is_approved and !is_refused:
 		return
-		
+
 	var puppy_identifier: int
 
-	if is_approved and body is Paper:
+	var last_node_name = body.get_child(body.get_child_count() - 1).name
+	
+	if is_approved and body is Paper and last_node_name == "Adopted":
 		# Index in the dictionary used to create both puppy and paper
 		puppy_identifier = body.index
 		body.queue_free()
-	if is_refused and body is Application:
+		received_response.emit(puppy_identifier)
+	if is_refused and body is Application and last_node_name == "NoPuppy":
 		body.queue_free()
-	received_response.emit(puppy_identifier)
+		received_response.emit()
 
 func _on_stamp_no_puppy_stamp():
 	is_approved = false

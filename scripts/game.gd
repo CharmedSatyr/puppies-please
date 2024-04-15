@@ -122,7 +122,8 @@ func _on_client_button_next_client() -> void:
 	$SetupTimer.start()
 
 func _on_human_received_response(puppy_identifier: int) -> void:
-	adopted = puppy_identifier
+	if puppy_identifier != null:
+		adopted = puppy_identifier
 	continue_dialogue()
 
 func cleanup_human() -> void:
