@@ -93,7 +93,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_wd1xf")
 theme_override_font_sizes/font_size = 26
-text = "Total: 90"
+text = "-------------------------------
+Total: 90
+"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -113,9 +115,7 @@ theme_override_fonts/font = ExtResource("1_wd1xf")
 theme_override_font_sizes/font_size = 26
 text = "...
 
-Thank you for playing! You got 1 of 3 possible endings. Leave a comment if you like puppies!
-
-By CharmedSatyr for Ludum Dare 55"
+Thank you for playing this little demo! You got 1 of 3 possible endings."
 horizontal_alignment = 1
 autowrap_mode = 2
 

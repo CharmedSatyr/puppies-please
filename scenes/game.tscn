@@ -38,7 +38,7 @@ script = ExtResource("1_i0ujb")
 shape = SubResource("CircleShape2D_flrd4")
 
 [node name="Human" parent="." instance=ExtResource("4_t7xvb")]
-position = Vector2(-232, 434)
+position = Vector2(-230, 394)
 scale = Vector2(5, 5)
 
 [node name="Dialogue" parent="." instance=ExtResource("5_s2q8n")]
@@ -62,10 +62,13 @@ position = Vector2(550, 810)
 position = Vector2(156, 841)
 
 [node name="DayOver" parent="." instance=ExtResource("9_mdxlf")]
+visible = false
 
 [node name="Introduction" parent="." instance=ExtResource("9_gpshc")]
+visible = false
 
 [node name="TitleScreen" parent="." instance=ExtResource("8_tfafu")]
+visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_h04af")
