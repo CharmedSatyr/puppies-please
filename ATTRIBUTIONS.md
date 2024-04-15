@@ -5,6 +5,27 @@ https://fontlibrary.org/en/font/xolonium
 Liberation Serif Bold
 https://github.com/liberationfonts/liberation-fonts/blobl/main/LICENSE
 
+**Photos**
+Adult Long-coated Brown Dog Beside Green Armchair
+Hoy
+Pexels
+https://www.pexels.com/photo/adult-long-coated-brown-dog-beside-green-armchair-1390784/
+
+American Pit Bull Terrier
+Viktoria B.
+Pexels
+https://www.pexels.com/photo/american-pit-bull-terrier-1078089/
+
+Portrait Photo of an Adult Black Pug
+Charles
+Pexels
+https://www.pexels.com/photo/portrait-photo-of-an-adult-black-pug-1851164/
+
+A Black and White Dalmatian Dog
+Igor Justo
+Pexels
+https://www.pexels.com/photo/a-black-and-white-dalmatian-dog-10391531/
+
 **Sounds**
 Stamp
 Pixabay
