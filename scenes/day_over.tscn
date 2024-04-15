@@ -119,7 +119,7 @@ By CharmedSatyr for Ludum Dare 55"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="RestartButton" type="Button" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -134,3 +134,5 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_wd1xf")
 theme_override_font_sizes/font_size = 46
 text = "Restart"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

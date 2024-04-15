@@ -134,7 +134,6 @@ func cleanup_human() -> void:
 		var pup = puppies[adopted]
 		# Index 0 is Theodore. The only properly adoptable dog right now.
 		if pup.index != 0:
-			print("Not Theo!")
 			mishoused_dog = true
 		else:
 			mishoused_dog = false

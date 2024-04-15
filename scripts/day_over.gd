@@ -18,3 +18,6 @@ Facility Maintenance: 20
 	var income = 70 + adoption_fees
 	var expenses = 60 + (90 if get_parent().mishoused_dog else 0)
 	$Total.text = "Total: %s" % (income - expenses)
+
+func _on_restart_button_pressed():
+	get_tree().reload_current_scene()
