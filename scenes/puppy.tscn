@@ -1,60 +1,60 @@
 [gd_scene load_steps=12 format=3 uid="uid://cifvdjsaryrk"]
 
 [ext_resource type="Script" path="res://scripts/puppy.gd" id="1_7k4rn"]
-[ext_resource type="Texture2D" uid="uid://c2pac5tcfgpbv" path="res://sprites/enemyFlyingAlt_1.png" id="1_nyn5l"]
-[ext_resource type="Texture2D" uid="uid://cnd1c0xwrfbf7" path="res://sprites/enemyFlyingAlt_2.png" id="2_jgi2j"]
-[ext_resource type="Texture2D" uid="uid://jps2c75y7y8i" path="res://sprites/enemySwimming_1.png" id="3_43l6q"]
-[ext_resource type="Texture2D" uid="uid://c6wbnuwolh5lh" path="res://sprites/playerGrey_up1.png" id="4_0v3pr"]
-[ext_resource type="Texture2D" uid="uid://bfnmlkro87mkf" path="res://sprites/enemySwimming_2.png" id="4_eingb"]
-[ext_resource type="Texture2D" uid="uid://bj6jigd67my07" path="res://sprites/enemyWalking_1.png" id="5_pxmy8"]
-[ext_resource type="Texture2D" uid="uid://df2ja1nosf8ou" path="res://sprites/playerGrey_walk2.png" id="5_utcpm"]
-[ext_resource type="Texture2D" uid="uid://d0b56r6gfoo8x" path="res://sprites/enemyWalking_2.png" id="6_w3v3b"]
+[ext_resource type="Texture2D" uid="uid://cwcpgqvahmnmv" path="res://sprites/ace-1.png" id="2_nmms4"]
+[ext_resource type="Texture2D" uid="uid://6eqs08dqqgaf" path="res://sprites/ace-2.png" id="3_lkcit"]
+[ext_resource type="Texture2D" uid="uid://ni2nqe4q7vw8" path="res://sprites/milo-1.png" id="4_5et8k"]
+[ext_resource type="Texture2D" uid="uid://b22jabwcpwaqs" path="res://sprites/milo-2.png" id="5_pgovl"]
+[ext_resource type="Texture2D" uid="uid://bb8ocledx32ot" path="res://sprites/mr-squiggles-1.png" id="6_smwk5"]
+[ext_resource type="Texture2D" uid="uid://52afgtto1gla" path="res://sprites/mr-squiggles-2.png" id="7_ny4li"]
+[ext_resource type="Texture2D" uid="uid://bnjmbljp6ys1l" path="res://sprites/theo-1.png" id="8_fsye7"]
+[ext_resource type="Texture2D" uid="uid://cg7dv8ydkyg62" path="res://sprites/theo-2.png" id="9_4aieg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p7t8k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_nyn5l")
+"texture": ExtResource("2_nmms4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_jgi2j")
+"texture": ExtResource("3_lkcit")
 }],
 "loop": true,
-"name": &"fly",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_0v3pr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_utcpm")
-}],
-"loop": true,
-"name": &"player",
+"name": &"ace",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_43l6q")
+"texture": ExtResource("4_5et8k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_eingb")
+"texture": ExtResource("5_pgovl")
 }],
 "loop": true,
-"name": &"swim",
-"speed": 3.0
+"name": &"milo",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_pxmy8")
+"texture": ExtResource("6_smwk5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_w3v3b")
+"texture": ExtResource("7_ny4li")
 }],
 "loop": true,
-"name": &"walk",
-"speed": 3.0
+"name": &"mr-squiggles",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fsye7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4aieg")
+}],
+"loop": true,
+"name": &"theo",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53nxp"]
@@ -70,9 +70,9 @@ script = ExtResource("1_7k4rn")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_p7t8k")
-animation = &"player"
+animation = &"ace"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
