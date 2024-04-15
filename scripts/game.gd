@@ -23,6 +23,7 @@ var spawn_count: int = 3
 func _ready() -> void:
 	$Dialogue.hide()
 	$Introduction.hide()
+	$DayOver.hide()
 	$TitleScreen.show()
 	
 	for i: int in range(0, spawn_count):
@@ -139,4 +140,4 @@ func cleanup_human() -> void:
 	end_game()
 
 func end_game() -> void:
-	print("Game over")
+	$DayOver.show()

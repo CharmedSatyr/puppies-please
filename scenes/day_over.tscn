@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://cieev0f87k6pe"]
+
+[ext_resource type="FontFile" uid="uid://d0sbitanv87fu" path="res://fonts/Xolonium-Regular.ttf" id="1_wd1xf"]
+
+[node name="DayOver" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="Heading" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.5
+offset_top = 88.0
+offset_right = 158.5
+offset_bottom = 144.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_wd1xf")
+theme_override_font_sizes/font_size = 46
+text = "End of Day 1"
+
+[node name="Subheading" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -227.0
+offset_top = 204.0
+offset_right = 229.0
+offset_bottom = 237.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_wd1xf")
+theme_override_font_sizes/font_size = 26
+text = "A-OK #1 Animal Shelter
+Finances"
+horizontal_alignment = 1
+
+[node name="Income" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -299.0
+offset_top = 296.0
+offset_right = 184.0
+offset_bottom = 365.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_wd1xf")
+theme_override_font_sizes/font_size = 26
+text = "Savings: 70
+Adoption Fees: 80"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Expenditures" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -299.0
+offset_top = 374.0
+offset_right = 181.0
+offset_bottom = 529.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wd1xf")
+theme_override_font_sizes/font_size = 26
+text = "Food (Dogs): 20
+Medicine (Dogs): 10
+Utilities: 20
+Facility maintenance: 10"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Total" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.0
+offset_top = 568.0
+offset_right = 183.0
+offset_bottom = 627.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_wd1xf")
+theme_override_font_sizes/font_size = 26
+text = "Total: 90"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="ThankYou" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -322.0
+offset_top = -339.0
+offset_right = 322.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_wd1xf")
+theme_override_font_sizes/font_size = 26
+text = "Thank you for playing! Leave a comment if you like puppies!
+
+By CharmedSatyr for Ludum Dare 55"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -139.0
+offset_right = 93.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_wd1xf")
+theme_override_font_sizes/font_size = 46
+text = "Restart"

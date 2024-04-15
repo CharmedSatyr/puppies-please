@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bf5rkgctq6mnx"]
+[gd_scene load_steps=14 format=3 uid="uid://bf5rkgctq6mnx"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4ayt2"]
 [ext_resource type="Script" path="res://scripts/sorter.gd" id="1_i0ujb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bwmosmm4qxvsx" path="res://scenes/stamp.tscn" id="6_vrmvy"]
 [ext_resource type="PackedScene" uid="uid://dfuhjmgl44bbu" path="res://scenes/title_screen.tscn" id="8_tfafu"]
 [ext_resource type="PackedScene" uid="uid://4a2rum12t2vr" path="res://scenes/introduction.tscn" id="9_gpshc"]
+[ext_resource type="PackedScene" uid="uid://cieev0f87k6pe" path="res://scenes/day_over.tscn" id="9_mdxlf"]
 [ext_resource type="PackedScene" uid="uid://cnjmxtgaybb4a" path="res://scenes/instructions.tscn" id="9_wgay0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flrd4"]
@@ -62,6 +63,8 @@ visible = false
 
 [node name="Introduction" parent="." instance=ExtResource("9_gpshc")]
 visible = false
+
+[node name="DayOver" parent="." instance=ExtResource("9_mdxlf")]
 
 [connection signal="next_client" from="Desk/ClientButton" to="." method="_on_client_button_next_client"]
 [connection signal="give_application" from="Human" to="." method="_on_human_give_application"]
