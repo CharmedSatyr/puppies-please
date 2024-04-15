@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dasjoooy3r7um"
-path="res://.godot/imported/humanBlue_2.png-b6554fae55f39918488d8912c783c578.ctex"
+uid="uid://5eobxmrxl4sm"
+path="res://.godot/imported/Human-1.png-7450f630ad8ecc2c0c46bb494334cb4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/humanBlue_2.png"
-dest_files=["res://.godot/imported/humanBlue_2.png-b6554fae55f39918488d8912c783c578.ctex"]
+source_file="res://sprites/Human-1.png"
+dest_files=["res://.godot/imported/Human-1.png-7450f630ad8ecc2c0c46bb494334cb4d.ctex"]
 
 [params]
 
