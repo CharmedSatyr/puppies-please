@@ -31,8 +31,6 @@ func _ready() -> void:
 			break
 		create_puppy(index)
 		create_paper(index)
-		
-		print(find_children("*", "Puppy"))
 
 func create_puppy(index: int) -> void:
 	var puppy: Puppy = puppy_scene.instantiate()
@@ -87,6 +85,7 @@ func push_paper_to_top(paper: Node2D) -> void:
 func continue_dialogue() -> void:
 	$Dialogue.show()
 	var message: String = $Human.get_dialogue_text()
+
 	if message == $Human.END_DIALOGUE:
 		$Dialogue.hide()
 		cleanup_human()
@@ -122,12 +121,11 @@ func _on_client_button_next_client() -> void:
 	$SetupTimer.start()
 
 func _on_human_received_response(puppy_identifier: int) -> void:
-	if puppy_identifier != null:
-		adopted = puppy_identifier
+	adopted = puppy_identifier
 	continue_dialogue()
 
 func cleanup_human() -> void:
-	if adopted != null:
+	if adopted >= 0:
 		# The puppy will walk out with him
 		var pup = puppies[adopted]
 		pup.set_axis_velocity(Vector2(-100, 100))
@@ -135,3 +133,10 @@ func cleanup_human() -> void:
 		pup.set_axis_velocity(Vector2(-300, 0))
 
 	$Human.speed = -200
+	$Human/AnimatedSprite2D.stop()
+	await get_tree().create_timer(2.0).timeout
+	$Human.queue_free()
+	end_game()
+
+func end_game() -> void:
+	print("Game over")

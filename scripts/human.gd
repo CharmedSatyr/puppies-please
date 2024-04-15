@@ -40,29 +40,29 @@ func get_dialogue_text() -> String:
 			give_application.emit()
 		if text == END_DIALOGUE:
 			dialogue_option = 0
-		dialogue_option += 1
+		else:
+			dialogue_option += 1
 
 	return text
 
 func _on_dialogue_timer_timeout():
 	$AnimatedSprite2D.play()
+	
+	
 
 func _on_body_entered(body):
 	if !is_approved and !is_refused:
 		return
 
-	var puppy_identifier: int
-
 	var last_node_name = body.get_child(body.get_child_count() - 1).name
 	
 	if is_approved and body is Paper and last_node_name == "Adopted":
-		# Index in the dictionary used to create both puppy and paper
-		puppy_identifier = body.index
 		body.queue_free()
-		received_response.emit(puppy_identifier)
+		# Index in the dictionary used to create both puppy and paper
+		received_response.emit(body.index)
 	if is_refused and body is Application and last_node_name == "NoPuppy":
 		body.queue_free()
-		received_response.emit()
+		received_response.emit(-1)
 
 func _on_stamp_no_puppy_stamp():
 	is_approved = false
