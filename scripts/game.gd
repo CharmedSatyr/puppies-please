@@ -124,7 +124,7 @@ func _on_client_button_next_client() -> void:
 func _on_human_received_response(puppy_identifier: int) -> void:
 	adopted = puppy_identifier
 	continue_dialogue()
-	
+
 func cleanup_human() -> void:
 	if adopted != null:
 		# The puppy will walk out with him

@@ -21,9 +21,7 @@ signal no_puppy_stamp
 var enabled: bool = false
 
 func _ready() -> void:
-	dragging = true
-	newPosition.x = right_bound
-	is_open = false
+	close()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -38,6 +36,11 @@ func _input(event: InputEvent) -> void:
 				is_open = true
 		else:
 			dragging = false
+
+func close() -> void:
+	dragging = true
+	newPosition.x = right_bound
+	is_open = false
 
 func _physics_process(_delta: float) -> void:
 	if dragging:
@@ -57,8 +60,10 @@ func _on_puppy_button_pressed():
 	if enabled:
 		puppy_stamp.emit()
 		enabled = false
+		close()
 
 func _on_no_puppy_button_pressed():
 	if enabled:
 		no_puppy_stamp.emit()
 		enabled = false
+		close()
