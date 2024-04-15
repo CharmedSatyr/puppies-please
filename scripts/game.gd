@@ -11,6 +11,10 @@ var paper_stack: Array[Node2D] = []
 
 # Dictionary indices of puppies whose Papers/sprites are instantiated
 var puppies_in_use: Array[int] = []
+# References to created puppies, by { index: Puppy }
+var puppies: Dictionary = {}
+# Index of the puppy that has been adopted. Available after approving adoption
+var adopted: int
 
 # Number of puppy dossiers to dynamically spawn
 var spawn_count: int = 3
@@ -27,6 +31,8 @@ func _ready() -> void:
 			break
 		create_puppy(index)
 		create_paper(index)
+		
+		print(find_children("*", "Puppy"))
 
 func create_puppy(index: int) -> void:
 	var puppy: Puppy = puppy_scene.instantiate()
@@ -38,6 +44,7 @@ func create_puppy(index: int) -> void:
 	puppy.position = Vector2(x, y)
 
 	add_child(puppy)
+	puppies[index] = puppy
 
 func create_paper(index: int) -> void:
 	var paper: Node2D = paper_scene.instantiate()
@@ -80,32 +87,50 @@ func push_paper_to_top(paper: Node2D) -> void:
 func continue_dialogue() -> void:
 	$Dialogue.show()
 	var message: String = $Human.get_dialogue_text()
-	if message.length() > 0:
+	if message == $Human.END_DIALOGUE:
+		$Dialogue.hide()
+		cleanup_human()
+	elif message.length() > 0:
 		$Dialogue.show_message(message)
+		$Stamp.enabled = false
 	else:
 		$Stamp.enabled = true
 		$Dialogue.hide()
 
-func _on_human_give_application():
+func _on_human_give_application() -> void:
 	var application: Application = application_scene.instantiate()
 	application.position = Vector2(384, 206)
 
 	add_child(application)
 
-func _on_setup_timer_timeout():
+func _on_setup_timer_timeout() -> void:
 	$Human.speed = 200
 	$DialogueTimer.start()
 
-func _on_dialogue_timer_timeout():
+func _on_dialogue_timer_timeout() -> void:
 	$Human.speed = 0
 	continue_dialogue()
 
-func _on_title_screen_start_game():
+func _on_title_screen_start_game() -> void:
 	$TitleScreen.hide()
 	$Introduction.show()
 
-func _on_introduction_close_introduction():
+func _on_introduction_close_introduction() -> void:
 	$Introduction.hide()
 
-func _on_client_button_next_client():
+func _on_client_button_next_client() -> void:
 	$SetupTimer.start()
+
+func _on_human_received_response(puppy_identifier: int) -> void:
+	adopted = puppy_identifier
+	continue_dialogue()
+	
+func cleanup_human() -> void:
+	if adopted != null:
+		# The puppy will walk out with him
+		var pup = puppies[adopted]
+		pup.set_axis_velocity(Vector2(-100, 100))
+		await get_tree().create_timer(1.0).timeout
+		pup.set_axis_velocity(Vector2(-300, 0))
+
+	$Human.speed = -200

@@ -65,6 +65,7 @@ visible = false
 
 [connection signal="next_client" from="Desk/ClientButton" to="." method="_on_client_button_next_client"]
 [connection signal="give_application" from="Human" to="." method="_on_human_give_application"]
+[connection signal="received_response" from="Human" to="." method="_on_human_received_response"]
 [connection signal="next_message" from="Dialogue" to="." method="continue_dialogue"]
 [connection signal="timeout" from="SetupTimer" to="." method="_on_setup_timer_timeout"]
 [connection signal="timeout" from="DialogueTimer" to="." method="_on_dialogue_timer_timeout"]
