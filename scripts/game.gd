@@ -106,4 +106,6 @@ func _on_title_screen_start_game():
 
 func _on_introduction_close_introduction():
 	$Introduction.hide()
+
+func _on_client_button_next_client():
 	$SetupTimer.start()

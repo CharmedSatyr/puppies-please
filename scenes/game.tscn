@@ -34,7 +34,7 @@ script = ExtResource("1_i0ujb")
 shape = SubResource("CircleShape2D_flrd4")
 
 [node name="Human" parent="." instance=ExtResource("4_t7xvb")]
-position = Vector2(-248, 434)
+position = Vector2(-232, 434)
 scale = Vector2(5, 5)
 
 [node name="Dialogue" parent="." instance=ExtResource("5_s2q8n")]
@@ -42,7 +42,7 @@ offset = Vector2(0, -30)
 transform = Transform2D(1, 0, 0, 1, 0, -30)
 
 [node name="SetupTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.0
 one_shot = true
 
 [node name="DialogueTimer" type="Timer" parent="."]
@@ -63,6 +63,7 @@ visible = false
 [node name="Introduction" parent="." instance=ExtResource("9_gpshc")]
 visible = false
 
+[connection signal="next_client" from="Desk/ClientButton" to="." method="_on_client_button_next_client"]
 [connection signal="give_application" from="Human" to="." method="_on_human_give_application"]
 [connection signal="next_message" from="Dialogue" to="." method="continue_dialogue"]
 [connection signal="timeout" from="SetupTimer" to="." method="_on_setup_timer_timeout"]
